@@ -17,12 +17,16 @@ public class WordSearch {
      System.out.println("Type the word you are searching for:");
 
      String inputWord = input.nextLine().toLowerCase();
-     System.out.println("Your search term is: " + inputWord);
+     if(firstSentence.toLowerCase().contains(inputWord)) {
+       System.out.println("Your search term " + inputWord + " was found in the sentence");
+     } else {
+       System.out.println("Your search term " + inputWord + " was not found in the sentence");
+     }
 
-     int index = firstSentence.indexOf(inputWord);
+     int index = firstSentence.toLowerCase().indexOf(inputWord);
      int length = inputWord.length();
      System.out.println("Your search term first appears at index " + index + ". Your term is " + length + " characters long.");
-     String modifiedSentence = firstSentence.replace(inputWord, "");
+     String modifiedSentence = firstSentence.toLowerCase().replace(inputWord, "");
      System.out.println(modifiedSentence);
    }
 }
